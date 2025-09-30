@@ -17,7 +17,7 @@ class Formulaire{
     public function listeDeroulante($name, $options = [], $args = []) {
         echo "<select name=\"$name\"";
         foreach ($args as $key => $value) {
-            echo " $key=\"$value\"";
+            echo " $key='$value'";
         }
         echo ">";
         foreach ($options as $key => $value) {
