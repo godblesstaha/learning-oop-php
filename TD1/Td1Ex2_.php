@@ -1,13 +1,13 @@
 <?php
 class Formulaire{
-    public function champSaisie($args) {
+    public function champSaisie($args = []) {
         echo "<input";
         foreach ($args as $key => $value) {
             echo " $key=\"$value\"";
         }
         echo ">";
     }
-    public function zoneTexte($args) {
+    public function zoneTexte($args = []) {
         echo "<textarea";
         foreach ($args as $key => $value) {
             echo " $key=\"$value\"";
@@ -25,30 +25,28 @@ class Formulaire{
         }
         echo "</select>";
     }
-    public function caseCocher($args) {
+    public function caseCocher($args = []) {
         echo "<input type=\"checkbox\"";
         foreach ($args as $key => $value) {
             echo " $key=\"$value\"";
         }
         echo ">";
     }
-    public function boutonRadio($args) {
+    public function boutonRadio($args = []) {
         echo "<input type=\"radio\"";
         foreach ($args as $key => $value) {
             echo " $key=\"$value\"";
         }
         echo ">";
     }
-    public function bouton($args) {
+    public function bouton($args = []) {
         echo "<button";
         foreach ($args as $key => $value) {
-            if ($key !== 'text') {
                 echo " $key=\"$value\"";
-            }
         }
-        echo ">" . ($args['text'] ?? '') . "</button>";
+        echo "> </button>";
     }
-    public function ouvertureForm($args) {
+    public function ouvertureForm($args = []) {
         echo "<form";
         foreach ($args as $key => $value) {
             echo " $key=\"$value\"";

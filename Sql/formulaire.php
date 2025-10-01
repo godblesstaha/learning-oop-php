@@ -15,7 +15,6 @@
         <input type="text" name="filiere">
         <input type="submit" value="Envoyer">
     </form>
-    
 
 </body>
 </html>
