@@ -65,10 +65,11 @@
 
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
-</div>
-<div class="text-end mt-4">
+    <div class="text-end mt-4">
         <a href="index.php" class="btn btn-outline-primary">Retour au Dashboard</a>
     </div>
+</div>
+
 
 </body>
 </html>

@@ -40,7 +40,7 @@ $athletes = $result->fetchAll();
 </head>
 <body>
 <div class="container mt-5">
-    <h2 class="mb-4 text-center">Mise à jour du chrono (10 athlètes)</h2>
+    <h2 class="mb-4 text-center">Mise à jour du chrono</h2>
 
     <form method="post" action="maj.php">
         <table class="table table-bordered table-striped text-center align-middle">
