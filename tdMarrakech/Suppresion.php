@@ -35,7 +35,11 @@ if(isset($_POST['dossard']) && isset($_POST['login']) && isset($_POST['password'
             <input type="submit" value="Supprimer" class="btn btn-danger mt-3">
         </div>
     </form>
+    <div class="text-end mt-4">
+        <a href="index.php" class="btn btn-outline-primary">Retour au Dashboard</a>
+    </div>
 </div>
+
 </body>
 </html>
 
