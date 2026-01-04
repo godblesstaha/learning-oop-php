@@ -8,8 +8,7 @@
 </head>
 <body class="bg-light">
 
-<div class="min-vh-100 d-flex align-items-center justify-content-center" 
-     style="background: url('marathon.jpg') no-repeat center center; background-size: cover;">
+<div class="min-vh-100 d-flex align-items-center justify-content-center" style="background: url('marathon.jpg') no-repeat center center; background-size: cover;">
      
     <div class="container text-center p-5 rounded bg-dark bg-opacity-25">
         <h1 class="text-white mb-5 fw-bold">Bienvenue sur le site du marathon</h1>

@@ -1,9 +1,5 @@
 <?php
-$server = "localhost";
-$user="root";
-$passworddb="";
-$db="marathon";
-$con=new PDO("mysql:host=$server;dbname=$db",$user,$passworddb);
+require 'connexion.php';
 if(isset($_POST['dossard']) && isset($_POST['login']) && isset($_POST['password'])){
     $dossard=$_POST['dossard'];
     $login=$_POST['login'];

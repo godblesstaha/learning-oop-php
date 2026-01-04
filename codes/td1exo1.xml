@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bouteillesEau>
+<bouteille>
+    <nom>Cristaline</nom>
+    <volume>
+    <valeur>150</valeur>
+    <unite>cl</unite>
+    </volume>
+    <ionsPositifs>
+    <type>ion positif</type>
+    <ion>
+    <nom>calcium</nom>
+    <valeur>71</valeur>
+    <unite>mg/l</unite>
+    </ion>
+    <ion>
+    <nom>magnesium</nom>
+    <valeur>5,5</valeur>
+    <unite>mg/l</unite>
+    </ion>
+    </ionsPositifs>
+    <ionsNegatifs>
+    <type>ion negatifs</type>
+    <ion>
+    <nom>chlorures</nom>
+    <valeur>20</valeur>
+    <unite>mg/l</unite>
+    </ion>
+    <ion>
+    <nom>nitrates</nom>
+    <valeur>1</valeur>
+    <unite>mgl</unite>
+    </ion>
+    </ionsNegatifs>
+    <recuellie>St-Cyr la Source</recuellie>
+    <departement>Loiret</departement>
+    <codeBarre>1234567890123</codeBarre>
+    <ph>7,45</ph>
+    <particules>
+        <particule>fer</particule>
+    </particules>
+</bouteille>
+<bouteille>
+    <nom>Cristaline</nom>
+    <volume>50cl</volume>
+    <ionsPositifs>
+    <type>ion positif</type>
+    <calcium>98mg</calcium>
+    <magnesium>4mg</magnesium>
+    </ionsPositifs>
+    <ionsNegatifs>
+    <type>ion negatifs</type>
+    <ion><nom>calcium</nom><valeur>3,6</valeur><unite>mg/l</unite></ion>
+    <ion><nom>nitrates</nom><valeur>2</valeur><unite>mg/l</unite></ion>
+    </ionsNegatifs>
+    <recuellie>Aurele</recuellie>
+    <departement>Alpes Maritimes</departement>
+    <codeBarre>9876543210987</codeBarre>
+    <ph>7,4</ph>
+    <particules/>
+</bouteille>
+<bouteille>
+    <nom>Volvic</nom>
+    <volume>50cl</volume>
+    <ions type="positifs">
+    <ion nom="calcium" unite="mg/l" valeur="11,5"></ion>
+    <magnesium>8mg</magnesium>
+    </ionsPositifs>
+    <ionsNegatifs>
+    <type>ion negatifs</type>
+    <chlorures>13,5mg</chlorures>
+    <nitrates>6,3mg</nitrates>
+    </ionsNegatifs>
+    <recuellie>Volvic</recuellie>
+    <departement/>
+    <codeBarre>3456789012345</codeBarre>
+    <ph>7</ph>
+    <particules>
+        <particule>silice</particule>
+    </particules>
+</bouteille>
+</bouteillesEau>

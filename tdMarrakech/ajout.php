@@ -1,10 +1,7 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    $server="localhost";
-    $user="root";
-    $passworddb="";
-    $db="marathon";
+   require 'connexion.php';
 
     $nom=$_POST['nom'];
     $prenom=$_POST['prenom'];
@@ -21,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $con->query($sql);
 
     $dossard = $con->lastInsertId();
-    echo '
+    ?>
     <!DOCTYPE html>
     <html lang="fr">
     <head>
@@ -35,11 +32,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             <div class="alert alert-success shadow p-4 rounded-3" role="alert">
                 <p>Vous êtes inscrit(e) avec succès.</p>
                 <hr>
-                <p class="mb-0 fw-bold">Votre numéro de dossard est : <span class="text-primary">'.$dossard.'</span></p>
+                <p class="mb-0 fw-bold">Votre numéro de dossard est : <span class="text-primary">'.<?=$dossard?>.'</span></p>
             </div>
         </div>
     </body>
     </html>
-    ';
+    <?php
 }
-
+    

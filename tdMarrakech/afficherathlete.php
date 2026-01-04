@@ -1,10 +1,5 @@
 <?php
-$server = "localhost";
-$user = "root";
-$passworddb = "";
-$db = "marathon";
-$athleteParPage = 25;
-$con = new PDO("mysql:host=$server;dbname=$db;charset=utf8", $user, $passworddb);
+require 'connexion.php';
 
 if (isset($_POST['sexe'])) {
     $sexe = $_POST['sexe'];
@@ -90,21 +85,66 @@ $athletes = $stmt->fetchAll();
         </tbody>
     </table>
 
-    <nav>
-        <ul class="pagination justify-content-center">
+    <?php
+    $prevPage = max(1, $pageCourante - 1);
+    $nextPage = min($pages, $pageCourante + 1);
+
+    function page_link($sexe, $p, $label = null, $class = '') {
+        $label = $label ?? $p;
+        return "<a class='page-link " . $class . "' href='?sexe=" . $sexe . "&page=" . $p . "'>" . $label . "</a>";
+    }
+    ?>
+
+    <nav class="d-none d-md-block" aria-label="Pagination">
+        <ul class="pagination justify-content-center flex-wrap">
+            <li class="page-item <?php echo ($pageCourante == 1 ? 'disabled' : ''); ?>">
+                <?php echo page_link($sexe, $prevPage, 'Précédent'); ?>
+            </li>
             <?php
-            for ($i = 1; $i <= $pages; $i++) {
-                if ($i == $pageCourante) {
-                    echo "<li class='page-item active'>
-                            <a class='page-link' href='?sexe=" . $sexe . "&page=" . $i . "'>" . $i . "</a>
-                          </li>";
-                } else {
-                    echo "<li class='page-item'>
-                            <a class='page-link' href='?sexe=" . $sexe . "&page=" . $i . "'>" . $i . "</a>
-                          </li>";
+            if ($pages <= 9) {
+                for ($i = 1; $i <= $pages; $i++) {
+                    $active = ($i == $pageCourante) ? ' active' : '';
+                    echo "<li class='page-item$active'>" . page_link($sexe, $i, $i) . "</li>";
                 }
+            } else {
+                $active = (1 == $pageCourante) ? ' active' : '';
+                echo "<li class='page-item$active'>" . page_link($sexe, 1, 1) . "</li>";
+
+                if ($pageCourante > 4) {
+                    echo "<li class='page-item disabled'><span class='page-link'>...</span></li>";
+                }
+
+                $start = max(2, $pageCourante - 2);
+                $end = min($pages - 1, $pageCourante + 2);
+                for ($i = $start; $i <= $end; $i++) {
+                    $active = ($i == $pageCourante) ? ' active' : '';
+                    echo "<li class='page-item$active'>" . page_link($sexe, $i, $i) . "</li>";
+                }
+
+                if ($pageCourante < $pages - 3) {
+                    echo "<li class='page-item disabled'><span class='page-link'>...</span></li>";
+                }
+
+                $active = ($pages == $pageCourante) ? ' active' : '';
+                echo "<li class='page-item$active'>" . page_link($sexe, $pages, $pages) . "</li>";
             }
             ?>
+            <li class="page-item <?php echo ($pageCourante == $pages ? 'disabled' : ''); ?>">
+                <?php echo page_link($sexe, $nextPage, 'Suivant'); ?>
+            </li>
+        </ul>
+    </nav>
+    <nav class="d-flex d-md-none justify-content-center align-items-center" aria-label="Pagination mobile">
+        <ul class="pagination">
+            <li class="page-item <?php echo ($pageCourante == 1 ? 'disabled' : ''); ?>">
+                <?php echo page_link($sexe, $prevPage, '&lt;'); ?>
+            </li>
+            <li class="page-item disabled">
+                <span class="page-link">Page <?php echo $pageCourante; ?> / <?php echo $pages; ?></span>
+            </li>
+            <li class="page-item <?php echo ($pageCourante == $pages ? 'disabled' : ''); ?>">
+                <?php echo page_link($sexe, $nextPage, '&gt;'); ?>
+            </li>
         </ul>
     </nav>
 

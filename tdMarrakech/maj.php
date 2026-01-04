@@ -1,10 +1,5 @@
 <?php
-$server = "localhost";
-$user = "root";
-$passworddb = "";
-$db = "marathon";
-
-$con = new PDO("mysql:host=$server;dbname=$db", $user, $passworddb);
+require 'connexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['dossard'])) {
